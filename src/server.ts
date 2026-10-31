@@ -1,8 +1,4 @@
-function welcome(name:string){
-  console.log('Welcome,'+name);
-  const user={
-    name:'Rakesh',
-  }
-  const name1=user.name;
+function welcome(name: string) {
+  return name
 }
-welcome("Rakesh k");
+welcome('Rakesh k')
