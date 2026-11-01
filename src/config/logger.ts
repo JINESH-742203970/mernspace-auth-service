@@ -40,6 +40,6 @@ const logger = winston.createLogger({
 })
 export default logger
 
-//now log will visible up to ifo level(error,warn,info)
+//now log will visible up to info level(error,warn,info)
 
 //we need to make dynamic fron .env for level field

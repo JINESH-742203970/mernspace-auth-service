@@ -16,12 +16,12 @@
 
 //npm install --save-dev lint-staged
 
-//why we need ts-node 
+//why we need ts-node
 
 node.js natively executes Javascript files not typescript files ts-node solves this by compiling typescript and executing it without requirin you to manually geneate Javascript files
 
 npm i winston
-no  i -d @types/winston
+no i -d @types/winston
 
 {error:0,warn:1,info:2,http:3,verbosr:4,debug:5,silly:6}//highest to lowest
 
