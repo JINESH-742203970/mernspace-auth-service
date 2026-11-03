@@ -1,13 +1,13 @@
-import { createDefaultEsmPreset } from "ts-jest";
+import { createDefaultEsmPreset } from 'ts-jest'
 
-const presetConfig = createDefaultEsmPreset();
+const presetConfig = createDefaultEsmPreset()
 
 export default {
-    ...presetConfig,
+  ...presetConfig,
 
-    testEnvironment: "node",
+  testEnvironment: 'node',
 
-    moduleNameMapper: {
-        "^(\\.{1,2}/.*)\\.js$": "$1"
-    }
-};
+  moduleNameMapper: {
+    '^(\\.{1,2}/.*)\\.js$': '$1',
+  },
+}
