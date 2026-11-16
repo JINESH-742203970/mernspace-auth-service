@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/require-await */
 import express, {
   type Request,
   type Response,
@@ -6,6 +7,8 @@ import express, {
 import logger from './config/logger.js'
 import type { HttpError } from 'http-errors'
 import createHttpError from 'http-errors'
+import authRouter from './routers/auth.js'
+import 'reflect-metadata'
 const app = express()
 app.get('/', (req, res) => {
   const err = createHttpError(401, 'You can not access this route')
@@ -27,6 +30,17 @@ app.get('/', (req, res) => {
 //    next(err);
 //   //  res.send('Welcome to auth service')
 //  })
+
+app.get('/', async (req, res) => {
+  res.send('Welcome to Auth Service')
+})
+
+app.post('/auth/register', (req, res) => {
+  res.status(201)
+  res.send()
+})
+
+app.use('/auth', authRouter)
 
 //global error Handler:It will come in the end of middleware chain
 // eslint-disable-next-line @typescript-eslint/no-unused-vars

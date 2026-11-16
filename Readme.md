@@ -28,7 +28,7 @@ no i -d @types/winston
 
 silent:true(To stop logging)
 
-//Erro Handling:Global Erro Handler
+//Erro Handling:Global Error Handler
 
 > npm install --save-dev jest
 > npm install --save-dev ts-jest
@@ -58,7 +58,7 @@ docker run --rm -it -v %cd%:/usr/src/app -v /usr/src/app/node_modules  --env-fil
 //Node_module have own binary file in each compile environment
 
 //left side:Host Machine
-//Right side:Docker machinr
+//Right side:Docker machine
 
 //Pass env variables
 --env-file  %cd%/.env -p 5501:5501 -e NODE_ENV=development
@@ -75,3 +75,44 @@ ctrl+c
 if container is running in detach mode
 docker ps
 docker stop <container id>
+
+
+Node.js s Expess.js
+Manual Routing/Built-in Routing
+Headers khud add karo/Auto handled
+More Code/Less code
+Hard to scale/Easy to scale
+Low-level/High level
+
+
+Low-level:Mchine understandable,more control
+High level:Human understandable
+
+
+//what is the need of volume
+for example if we are using postgress database image and if we stop the container then whole data is lost to avoid this we use volume and stroe data here and mount with postgress
+Volume is maintained by docker
+
+
+//TDD(Test Driven Development)
+
+//PostgreSQL vs MongoDB
+
+docker images
+docker volume create pgdata
+
+docker volume ls
+
+docker ps
+docker pull postgres
+
+//some-postgress is container name 
+docker run --name some-postgress -e POSTGRES_USER=root -e POSTGRES_PASSWORD=root -v pgdata:/var/lib/postgresqal/data -p 5432:5432 -d postgres
+
+
+//Access your PostgreSQL
+docker exec -it some-postgres psql -U postgres
+
+//DbGate tool
+
+//TypeORM:TypeORM is an Object-Relational Mapper (ORM) library written in TypeScript that runs in Node.js, browser, and mobile environments. It bridges object-oriented code and relational or NoSQL databases, allowing you to interact with data using classes and decorators instead of writing raw SQL queries.
