@@ -37,14 +37,12 @@ silent:true(To stop logging)
 
 //--runInBand:jest testcase run concurrently that can be issue I want test run sequentially
 
-
 //PORT BINDING:Expose the docker port in host machine basically docker application port accessible form app
 
-//Build dockerImage and here tag 
+//Build dockerImage and here tag
 docker build -t auth-service:dev -f docker/dev/Dockerfile .
 
-docker run --rm -it -v %cd%:/usr/src/app -v /usr/src/app/node_modules  --env-file %cd%/.env -p 5501:5501 -e NODE_ENV=development auth-service:dev
-
+docker run --rm -it -v %cd%:/usr/src/app -v /usr/src/app/node_modules --env-file %cd%/.env -p 5501:5501 -e NODE_ENV=development auth-service:dev
 
 //--rm:once container stop so we delete that automatically use (--rm)
 //-t:to run container in interactive mode(attach terminal to container)
@@ -54,14 +52,13 @@ docker run --rm -it -v %cd%:/usr/src/app -v /usr/src/app/node_modules  --env-fil
 -v /usr/src/app/node_modules :container node_modules not sync node_modules with host machine node_modules
 //Mount Binding vs Volume Binding
 
-
 //Node_module have own binary file in each compile environment
 
 //left side:Host Machine
 //Right side:Docker machine
 
 //Pass env variables
---env-file  %cd%/.env -p 5501:5501 -e NODE_ENV=development
+--env-file %cd%/.env -p 5501:5501 -e NODE_ENV=development
 
 //Run docker image
 docker run --rm -it -v %cd%:/usr/src/app -v /usr/src/app/node_modules --env-file %cd%/.env -p 5501:5501 -e NODE_ENV=development auth-service:dev
@@ -76,7 +73,6 @@ if container is running in detach mode
 docker ps
 docker stop <container id>
 
-
 Node.js s Expess.js
 Manual Routing/Built-in Routing
 Headers khud add karo/Auto handled
@@ -84,15 +80,12 @@ More Code/Less code
 Hard to scale/Easy to scale
 Low-level/High level
 
-
 Low-level:Mchine understandable,more control
 High level:Human understandable
-
 
 //what is the need of volume
 for example if we are using postgress database image and if we stop the container then whole data is lost to avoid this we use volume and stroe data here and mount with postgress
 Volume is maintained by docker
-
 
 //TDD(Test Driven Development)
 
@@ -106,9 +99,8 @@ docker volume ls
 docker ps
 docker pull postgres
 
-//some-postgress is container name 
+//some-postgress is container name
 docker run --name some-postgress -e POSTGRES_USER=root -e POSTGRES_PASSWORD=root -v pgdata:/var/lib/postgresqal/data -p 5432:5432 -d postgres
-
 
 //Access your PostgreSQL
 docker exec -it some-postgres psql -U postgres
