@@ -116,3 +116,6 @@ docker exec -it some-postgres psql -U postgres
 //DbGate tool
 
 //TypeORM:TypeORM is an Object-Relational Mapper (ORM) library written in TypeScript that runs in Node.js, browser, and mobile environments. It bridges object-oriented code and relational or NoSQL databases, allowing you to interact with data using classes and decorators instead of writing raw SQL queries.
+
+//way to pass variable
+// "dev":"NODE_ENV =dev nodemon src/server.ts"
