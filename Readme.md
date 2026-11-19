@@ -111,3 +111,6 @@ docker exec -it some-postgres psql -U postgres
 
 //way to pass variable
 // "dev":"NODE_ENV =dev nodemon src/server.ts"
+
+
+//inversifyjs library for databse connection need to check

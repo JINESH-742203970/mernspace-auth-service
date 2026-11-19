@@ -7,12 +7,13 @@
   "type": "module",
   "main": "server.js",
   "scripts": {
-    "dev": "cross-env NODE_ENV=dev n odemon --watch src --ext ts --exec \"node --loader ts-node/esm\" src/server.ts",
+    "dev": "cross-env NODE_ENV=dev nodemon --watch src --ext ts --exec \"node --loader ts-node/esm\" src/server.ts",
     "format:fix": "prettier . --write",
     "format:check": "prettier . --check",
     "lint:check": "eslint . ",
     "lint:fix": "eslint . --fix",
-    "test": "node --experimental-vm-modules ./node_modules/jest/bin/jest.js --watch --runInBand",
+    "test": "cross-env NODE_ENV=test node --experimental-vm-modules ./node_modules/jest/bin/jest.js --watch --runInBand",
+    "test:register": "node --experimental-vm-modules ./node_modules/jest/bin/jest.js src/tests/users/register.spec.ts --runInBand",
     "start": "ts-node src/index.ts",
     "prepare": "husky",
     "typeorm": "typeorm-ts-node-commonjs"
